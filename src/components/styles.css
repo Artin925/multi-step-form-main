@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  height: 650px;
+  max-width: 1280px;
+  margin-right: 150px;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.sidebar {
+  width: 288px;
+  background: url("../assets/images/sidebar.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 15px 0px 15px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .active {
+  font-weight: bold;
+}
+
+.circle-button {
+  background-color: #c0e0fc;
+  border: solid rgb(192, 224, 252);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #03285b;
+  margin-right: 10px;
+}
+
+.circle-button .active {
+  background-color: #c0e0fc00;
+  border-color: #c0e0fc;
+}
+
+.circle-button-text .text {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+.circle-button-text .subtext {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+
+.header p {
+  margin-bottom: 50px;
+  color: #808080;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 640px;
+  align-items: stretch;
+  padding: 0px;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+}
+
+.form-content h2 {
+  margin-bottom: 20px;
+}
+
+.form-content form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-content form label {
+  margin-bottom: 5px;
+}
+
+.form-content form input {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+
+.form-content form button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 10px;
+  justify-content:space-between;
+  padding-top: 80px;
+  background: white;
+}
+
+.step1-footer {
+  justify-content: end;
+}
+
+.next-step-btn {
+  padding: 15px 20px;
+  background: #03285b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.next-step-btn:hover {
+  background: #021d4a;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  margin: 0px 10px 10px 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card img {
+  height: 35px;
+  margin-bottom: 10px;
+  align-items: left;
+}
+
+.card.selected {
+  border-color: #554e92;
+  background-color: #f8f9fe;
+}
+
+.billing-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fe;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.billing-toggle span {
+  padding: 10px 50px;
+  cursor: pointer;
+}
+
+.billing-toggle .active {
+  font-weight: bold;
+  color: #03285b;
+}
+
+.billing-toggle .toggle-button {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background-color: #03285b;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2px;
+  transition: all 0.3s;
+}
+
+.billing-toggle .toggle-button.yearly {
+  justify-content: flex-start;
+}
+
+.billing-toggle .toggle-button .knob {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.billing-toggle .toggle-button .knob.monthly {
+  transform: translateX(0);
+}
+
+.billing-toggle .toggle-button .knob.yearly {
+  transform: translateX(25px);
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-btn {
+  background: transparent;
+  color: lightgrey;
+  border: none;
+  cursor: pointer;
+  justify-content: start;
+}
+
+.back-btn:hover{
+  color: #03285b;
+}
+
+.next-step-btn {
+  padding: 15px 20px;
+  background: #03285b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.next-step-btn:hover {
+  background: #021d4a;
+}
+
+.input-container,
+.input-container input {
+  width: 100%;
+}
+
+.input-label-error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-ons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.add-on {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.add-on.selected {
+  border-color: #554E92;
+  background-color: #f8f9fe;
+}
+
+.add-on-checkbox {
+  margin-right: 10px;
+}
+
+.add-on-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.add-on-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-on h3 {
+  margin-bottom: 5px;
+}
+
+.add-on p {
+  margin: 0;
+}
+
+.add-on .price {
+  margin-left: auto;
+  color: #534AAE;
+}
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  margin-bottom: 10px;
+}
+
+.summary-item h3 {
+  margin-bottom: 5px;
+}
+
+.summary-item p {
+  margin: 0;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.confirm-btn {
+  background: #03285b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
